@@ -12,6 +12,6 @@ namespace CoreCodeCamp.Data.Entities
         public Location Location { get; set; }
         public DateTime EventDate { get; set; } = DateTime.MinValue;
         public int Length { get; set; }
-        public ICollection<Task> Talks { get; set; }
+        public ICollection<Talk> Talks { get; set; }
     }
 }
