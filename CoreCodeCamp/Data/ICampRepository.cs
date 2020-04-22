@@ -13,7 +13,7 @@ namespace CoreCodeCamp.Data
 
         // Camps
         Task<Camp[]> GetAllCampsAsync(bool includeTalks = false);
-        Task<Camp> GetCampAsync(string moniker, bool includeTalks);
+        Task<Camp> GetCampAsync(string moniker, bool includeTalks = false);
         Task<Camp[]> GetAllCampsByEventDate(DateTime dateTime, bool includeTalks = false);
 
         // Talks
