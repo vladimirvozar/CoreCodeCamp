@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "780ab747-9563-409f-88bf-ee9055f333d3",
+		"name": "CoreCodeCamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Camps",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44333/api/v2/camps",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"v2",
+						"camps"
+					],
+					"query": [
+						{
+							"key": "version",
+							"value": "2.0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Camp by a Moniker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44333/api/camps/:moniker",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						":moniker"
+					],
+					"variable": [
+						{
+							"key": "moniker",
+							"value": "ATL2018"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Camps by Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44333/api/camps/search/?theDate=2018-10-18&includeTalks=true",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "theDate",
+							"value": "2018-10-18"
+						},
+						{
+							"key": "includeTalks",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Camp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"San Diego Code Camp\",\r\n    \"moniker\": \"SD2018\",\r\n    \"eventDate\": \"2018-05-05T00:00:00\",\r\n    \"length\": 3,\r\n    \"venue\": \"SD Community College\",\r\n    \"address1\": null,\r\n    \"address2\": null,\r\n    \"address3\": null,\r\n    \"cityTown\": null,\r\n    \"stateProvince\": null,\r\n    \"postalCode\": \"12345\",\r\n    \"country\": null,\r\n    \"talks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/camps/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Camp",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"San Diego Code Camp\",\r\n    \"moniker\": \"SD2018\",\r\n    \"eventDate\": \"2018-05-05T00:00:00\",\r\n    \"length\": 3,\r\n    \"venue\": \"SD Community College\",\r\n    \"address1\": \"123 Main Street\",\r\n    \"address2\": null,\r\n    \"address3\": null,\r\n    \"cityTown\": \"San Diego\",\r\n    \"stateProvince\": \"CA\",\r\n    \"postalCode\": \"98765\",\r\n    \"country\": \"USA\",\r\n    \"talks\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/camps/SD2018",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						"SD2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the Camp",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/camps/SD2018",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						"SD2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Talks for Moniker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44333/api/camps/:moniker/talks",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						":moniker",
+						"talks"
+					],
+					"variable": [
+						{
+							"key": "moniker",
+							"value": "ATL2018"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Talk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44333/api/camps/:moniker/talks/:talkId",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						":moniker",
+						"talks",
+						":talkId"
+					],
+					"variable": [
+						{
+							"key": "moniker",
+							"value": "ATL2018"
+						},
+						{
+							"key": "talkId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Talk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Building APIs\",\r\n    \"abstract\": \"Building APIs can be fun\",\r\n    \"level\": 300,\r\n    \"speaker\": {\r\n    \t\"speakerId\" : 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/camps/:moniker/talks",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						":moniker",
+						"talks"
+					],
+					"variable": [
+						{
+							"key": "moniker",
+							"value": "ATL2018"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Talk",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"talkId\": 3,\r\n    \"title\": \"Building APIs\",\r\n    \"abstract\": \"Building APIs can be fun\",\r\n    \"level\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/camps/:moniker/talks/:talkId",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						":moniker",
+						"talks",
+						":talkId"
+					],
+					"variable": [
+						{
+							"key": "moniker",
+							"value": "ATL2018"
+						},
+						{
+							"key": "talkId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Talk",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/camps/:moniker/talks/:talkId",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"camps",
+						":moniker",
+						"talks",
+						":talkId"
+					],
+					"variable": [
+						{
+							"key": "moniker",
+							"value": "ATL2018"
+						},
+						{
+							"key": "talkId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reaload configuration",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44333/api/operations/reloadconfig",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44333",
+					"path": [
+						"api",
+						"operations",
+						"reloadconfig"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
