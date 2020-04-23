@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 namespace CoreCodeCamp.Controllers
 {
     [ApiController]
+    [ApiVersion("1.0")]
+    [ApiVersion("1.1")]
     [Route("api/camps/{moniker}/talks")]
     public class TalksController : ControllerBase
     {
